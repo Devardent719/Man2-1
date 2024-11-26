@@ -13,8 +13,8 @@ class Man{
         
         Age = rand.nextInt(35) + 15;
         Health = rand.nextInt(90) + 10;
-        System.out.println(Age + " " + Health);
-        Talk();
+        //System.out.println(Age + " " + Health);
+        //Talk();
     }
 
     private final Random rand = new Random();
@@ -44,11 +44,25 @@ class Man{
         }
     }
     public void Go(){
-        
+        if(isLife){
+            if(Health > 40){
+                String outStr = Name + " мирно прогуливается по городу";
+                System.out.println(outStr);
+            }
+            else{
+                String outStr = Name + " болен и не может гулять по городу";
+                System.out.println(outStr);
+            }
+        }  
+        else{
+            String outStr = Name + " неможет идти, он умер";
+            System.out.println(outStr);
+        }
+    }
+    public void Kill(){
+        isLife = false;
     }
     public boolean isAlive(){
-
-
         return isLife;
     }
 }
