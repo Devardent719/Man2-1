@@ -1,34 +1,33 @@
-
 import java.util.Random;
 import java.util.Scanner;
 
 public class Man21{
     public static void main(String[] args){
-        Man man;
-        Scanner scan = new Scanner(Systme.in);
+        Man man = null;
+        Scanner scan = new Scanner(System.in);
 
         boolean Infiniti = true;
-        string command = "";
+        String command = "";
 
         while(Infiniti){
             System.out.print("Введите команду: ");
 
-            command = scan.neztLine();
+            command = scan.nextLine();
             switch(command){
                 case "exit":
                     Infiniti = false;
                 break;
                 case "help":
-                    System.out.println("Список команд: /n ---");
-                    System.out.println("create man /n kill /n talk /n go");
-                break;
+                    System.out.println("Список команд: \n---");
+                    System.out.println("1.create man \n2.kill \n3.talk \n4.go");
+                    break;
                 case "create man":
                     System.out.print("Введите имя нового человека: ");
-                    name = scan.neztLine();
+                    String name = scan.nextLine();
 
                     man = new Man(name);
                     System.out.println("Человек успешно создан");
-                break;
+                    break;
                 case "kill":
                     if(man != null){
                         man.Kill();
@@ -36,7 +35,7 @@ public class Man21{
                     else{
                         System.out.println("Нет созданного человека");
                     }
-                break;
+                    break;
                 case "talk":
                     if(man != null){
                         man.Talk();
@@ -44,7 +43,7 @@ public class Man21{
                     else{
                         System.out.println("Нет созданного человека");
                     }
-                break;
+                    break;
                 case "go":
                     if(man != null){
                         man.Go();
@@ -52,6 +51,7 @@ public class Man21{
                     else{
                         System.out.println("Нет созданного человека");
                     }
+                    break;
                 default:
                     System.out.println("Ваша команда не определена");
             }
@@ -94,7 +94,7 @@ class Man{
                     str = "Со здоровьем у меня хреново, дожить бы до " + (Age + 10);
             break;
         }
-        System.out.prinln(str);
+        System.out.println(str);
     }
     public void Go(){
         if(isLife){
