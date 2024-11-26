@@ -1,9 +1,61 @@
 
 import java.util.Random;
+import java.util.Scanner;
 
 public class Man21{
     public static void main(String[] args){
-        Man man = new Man("Mark");
+        Man man;
+        Scanner scan = new Scanner(Systme.in);
+
+        boolean Infiniti = true;
+        string command = "";
+
+        while(Infiniti){
+            System.out.print("Введите команду: ");
+
+            command = scan.neztLine();
+            switch(command){
+                case "exit":
+                    Infiniti = false;
+                break;
+                case "help":
+                    System.out.println("Список команд: /n ---");
+                    System.out.println("create man /n kill /n talk /n go");
+                break;
+                case "create man":
+                    System.out.print("Введите имя нового человека: ");
+                    name = scan.neztLine();
+
+                    man = new Man(name);
+                    System.out.println("Человек успешно создан");
+                break;
+                case "kill":
+                    if(man != null){
+                        man.Kill();
+                    }
+                    else{
+                        System.out.println("Нет созданного человека");
+                    }
+                break;
+                case "talk":
+                    if(man != null){
+                        man.Talk();
+                    }
+                    else{
+                        System.out.println("Нет созданного человека");
+                    }
+                break;
+                case "go":
+                    if(man != null){
+                        man.Go();
+                    }
+                    else{
+                        System.out.println("Нет созданного человека");
+                    }
+                default:
+                    System.out.println("Ваша команда не определена");
+            }
+        }
     }
 }
 class Man{
@@ -42,6 +94,7 @@ class Man{
                     str = "Со здоровьем у меня хреново, дожить бы до " + (Age + 10);
             break;
         }
+        System.out.prinln(str);
     }
     public void Go(){
         if(isLife){
